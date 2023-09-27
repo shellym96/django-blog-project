@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
+
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -24,11 +25,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECRET_KEY = 'django-insecure-s92soq9flt=l+o0o9772b)fyp@fhgi$cz1#*)gx44zt4w4q2dx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ALLOWED_HOSTS = ['8000-shellym96-djangoblogpro-8arjom16aak.ws-eu105.gitpod.io']
 ALLOWED_HOSTS = ['https://django-i-blog-project-f7c41cab66b7.herokuapp.com', 'localhost']
 
 
